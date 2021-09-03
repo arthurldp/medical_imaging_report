@@ -46,7 +46,7 @@ Exam:
   urinary_lower_tract_results:
     baldder_filling: [full]
     diversion: [No]
-    bladder_wall: [thickened]
+    bladder_aspect: [thickened]
     location_of_the bladder_wall_defect: [diffuse]
     bladder_wall_thickness: 5
     bladder_volume: 42
