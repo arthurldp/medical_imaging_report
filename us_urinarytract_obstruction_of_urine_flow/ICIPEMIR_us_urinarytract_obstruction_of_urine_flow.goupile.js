@@ -100,7 +100,7 @@ page.section("Urinary upper tract", () => {
                     page.number("ureterocele_diameter"+ u,"Measured diameter of ureterocele (mm)",{min:0,suffix:"mm"})}
             page.output(html`<u><b>Ureter</b></u>`)
             page.enum("ureteral_dilatation" + u, "Ureteral dilatation, as evaluated by the physician",
-                ["No", "Yes","Yes,all the way through","Yes,in its abdominal portion","Yes, in its pelvic portion", "NA"])
+                ["No", "Yes","Yes,all the way through","Yes,in its lumbar portion","Yes, in its pelvic portion", "NA"])
             page.number("ureteral_diameter_retrovesical" + u, "Maximal measured diameter of the retrovesical ureter (mm)",{min:0,suffix:"mm"})
             page.number("ureteral_diameter_lumbar" + u, "Maximal measured diameter of the lumbar ureter (mm)",{min:0,suffix:"mm"})
             page.enum("ureter_wall" + u, "Presence of a thickened ureter",
@@ -114,12 +114,12 @@ page.section("Urinary lower tract", () => {
    page.enum("baldder_filling","Appearance of bladder filling",["empty", "partially filled", "Full", "Unknown", "NA"])
    page.enum("diversion","Presence of a urinary diversion in the described urinary tract",["No", "vesical probe", "cystostomy", "NA"])
    page.output(html`<u><b>Bladder wall</b></u>`)
-   page.enum("bladder_wall","Description of bladder wall",["Normal", "Thickened", "Trabeculation", "Diverticular", "Unknown", "NA"])
-   if (page.value("bladder_wall") == ["Thickened"]) {
+   page.enum("bladder_aspect","Description of bladder wall",["Normal", "Thickened", "Trabeculation", "Diverticular", "Unknown", "NA"])
+   if (page.value("bladder_aspect") == ["Thickened"]) {
        page.enum("location_of_the_bladder_wall_defect","Location of the bladder wall defect",["Diffuse", "Focal", "Unknown", "NA"])}
-   if (page.value("bladder_wall") == ["Trabeculation"]) {
+   if (page.value("bladder_aspect") == ["Trabeculation"]) {
        page.enum("location_of_the_bladder_wall_defect","Location of the bladder wall defect",["Diffuse", "Focal", "Unknown", "NA"])}
-   if (page.value("bladder_wall") == ["Diverticular"]) {
+   if (page.value("bladder_aspect") == ["Diverticular"]) {
        page.enum("location_of_the_bladder_wall_defect","Location of the bladder wall defect",["Diffuse", "Focal", "Unknown", "NA"])}
     page.number("bladder_wall_thickness","Measurement of bladder wall in mm",{min:0,suffix:"mm"})
     page.output(html`<u><b>Volume</b></u>`)
