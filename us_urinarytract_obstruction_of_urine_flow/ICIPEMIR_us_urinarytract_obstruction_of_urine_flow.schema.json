@@ -73,9 +73,9 @@
 			"enum": ["No", "Right", "Left", "Unknown", "NA"],
 			"default": "No"
 		},
-		"abdominal_effusion": {
+		"intraperitoneal_effusion": {
 			"type": "string",
-			"description": "Presence of a abdominal effusion",
+			"description": "Presence of a intraperitoneal effusion",
 			"enum": ["No", "Presence", "Unknown", "NA"],
 			"default": "No"
 		},
@@ -87,7 +87,7 @@
 					"type": "string",
 					"description": "Generated hash id for each successively described urinary tract"
 				},
-				"lateralization": {
+				"lateralisation": {
 					"type": "string",
 					"description": "Lateralisation of kidney",
 					"enum": ["Left", "Right", "Left upper pole", "Left lower pole", "Right upper pole", "Right lower pole", "Left renal transplant", "Right renal transplant"]
@@ -100,10 +100,10 @@
 				},
 				"renal_height": {
 					"type": "number",
-					"description": "Measured heigh of the kidney (mm)",
+					"description": "Measured height of the kidney (mm)",
 					"minimum": 0
 				},
-				"evolution_of_renal_height": {
+				"renal_height_evolution": {
 					"type": "string",
 					"description": "Evolution of the size according to the last ultrasound",
 					"enum": ["increase", "decrease", "stable", "Unknown", "NA"],
@@ -111,27 +111,27 @@
 				},
 				"previous_renal_height": {
 					"type": "number",
-					"description": "Previous measured heigh of the kidney (mm)",
+					"description": "Previous measured height of the kidney (mm)",
 					"minimum": 0
 				},
-				"pelvic_dilatation": {
+				"pyelocaliceal_dilatation": {
 					"type": "string",
-					"description": "Presence of pelvic dilatation of the kidney",
+					"description": "Presence of pyelocaliceal dilatation of the kidney",
 					"enum": ["No", "Yes", "Unknown", "NA"],
 					"default": "No"
 				},
-				"anteroposterior_diameter_of_the_renal_pelvis": {
+				"interlabial_pelvic_diameter": {
 					"type": "number",
-					"description": "Measurements of the anteroposterior diameter of the renal pelvis on a transverse section in mm",
+					"description": "Measurements of the interlabial diameter of the renal pelvis on a transverse section in mm",
 					"minimum": 0
 				},
-				"evolution_of_APD": {
+				"interlabial_pelvic_diameter_evolution": {
 					"type": "string",
 					"description": "Evolution of the APD as compared to previous imaging exam",
 					"enum": ["Increased", "Stable", "Decreased", "Unknown", "NA"],
 					"default": "NA"
 				},
-				"extrarenal_pelvis_diameter": {
+				"extrasinusal_pelvis": {
 					"type": "number",
 					"description": "Measurements diameter of the extrarenal pelvis on a transverse section in mm",
 					"minimum": 0
@@ -154,13 +154,13 @@
 					"enum": ["Normal", "Hypoechoic", "Hyperechoic", "Unknown", "NA"],
 					"default": "Normal"
 				},
-				"echogenicity_of_parenchyma": {
+				"parenchyma_echogenicity": {
 					"type": "string",
 					"description": "Echogenicity_of_parenchyma",
 					"enum": ["Normal", "Hyperechogenic cortex", "NA"],
 					"default": "Normal"
 				},
-				"degree_of_corticomedullary_differentiation": {
+				"corticomedullary_differentiation": {
 					"type": "string",
 					"description": "aspect of corticomedullary differentiation",
 					"enum": ["Normal", "Decreased", "No corticomedullary differentiation", "NA"],
@@ -204,14 +204,14 @@
 					"enum": ["No", "Yes", "Yes,all the way through", "Yes,in its abdominal portion", "Yes, in its pelvic portion", "NA"],
 					"default": "No"
 				},
-				"diameter_of_retrovesical_ureter": {
+				"ureteral_diameter_retrovesical": {
 					"type": "number",
 					"description": "Maximal measured diameter of the retrovesical ureter (mm)",
 					"minimum": 0
 				},
-				"diameter_of_abdominal_ureter": {
+				"ureteral_diameter_lumbar": {
 					"type": "number",
-					"description": "Maximal measured diameter of the ureter (mm)",
+					"description": "Maximal measured diameter of the lumbar ureter (mm)",
 					"minimum": 0
 				},
 				"ureter_wall": {
@@ -253,12 +253,12 @@
 					"description": "Measurement of bladder wall in mm",
 					"minimum": 0
 				},
-				"initial_bladder_volume": {
+				"bladder_volume": {
 					"type": "number",
-					"description": "Initail bladder volume in ml",
+					"description": "Initial bladder volume in ml",
 					"minimum": 0
 				},
-				"post_void_residual_Bladder_Volume": {
+				"post_void_residual_bladder_volume": {
 					"type": "number",
 					"description": "Post void residual volume in ml",
 					"minimum": 0
