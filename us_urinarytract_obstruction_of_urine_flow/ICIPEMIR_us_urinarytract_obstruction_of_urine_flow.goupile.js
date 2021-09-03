@@ -1,10 +1,8 @@
-// Lithiasis report Goupile: go to https://goupile.fr/demo/app/introduction/
+// Urine tract ultrasound report Goupile: go to https://goupile.fr/demo/app/introduction/
 
 page.pushOptions({compact: true})
 
-page.output(html`
-    <H1><u>Urine tract ultrasound Report</u>
-`)
+page.output(html`<H1><u>Urine tract ultrasound Report</u>`)
 
 // Patient information
 
@@ -42,7 +40,7 @@ page.section("Results", () => {
         "renal_transplant",
         "Presence of a renal transplant resulting in an 'additionnal' urinary tract to describe", 
         ["No", "Right", "Left", "Unknown", "NA"], {value: "No",})
-    page.enumDrop("abdominal_effusion","Presence of a abdominal effusion",["No", "Right", "Left", "Unknown", "NA"],{value: "No",})
+    page.enumDrop("intraperitoneal_effusion","Presence of a abdominal effusion",["No", "Right", "Left", "Unknown", "NA"],{value: "No",})
 })
 
 // Urinary upper tract results
@@ -52,30 +50,30 @@ page.section("Urinary upper tract", () => {
     for (let u = 1; u <= page.value("n_urinary_upper_tract"); u++) {
             page.section("Urinary upper tract #" + u, () => {
             page.number("urinary_upper_tract_id" + u, "ID of the urinary upper tract", {value:u})
-            page.enumDrop("urinary_upper_tract" + u, 
+            page.enumDrop("lateralisation" + u, 
                 "Lateralisation of the urinary upper tract to be described", 
                 ["Left", "Right", "Left upper pole", "Left lower pole", "Right upper pole", "Right lower pole", "Left renal transplant", "Right renal transplant"])
             page.enum("diversion" + u, 
                 "Presence of a urinary diversion in the described urinary tract",
-                ["No", "jj_stent", "ureteral_catheter", "pyelostomy", "NA"])
+                ["No", "jj stent", "ureteral catheter", "pyelostomy", "NA"])
             page.output(html`<u><b>Size</b></u>`)
             page.number("renal_height" + u,
                 "Measured heigh of the kidney", {min:0,suffix:"mm"})
             page.sameLine(true);page.multiCheck("evolution"+ u,"Evolution",["Click to open"])
             if (page.value("evolution" + u) == "Click to open") {
-            page.enum("evolution_of_renal_height" + u, 
+            page.enum("renal_height_evolution" + u, 
                 "Evolution of the size according to the last ultrasound", 
                 ["Increase", "Decrease","Stable", "Unknown", "NA"])
             page.number("previous_renal_height" + u,
                 "Previous measured heigh of the kidney", {min:0,suffix:"mm"}) }
             page.output(html`<u><b>Dilatation</b></u>`)
-            page.enum("pelvic_dilatation" + u, 
+            page.enum("pyelocaliceal_dilatation" + u, 
                 "Presence of pelvic dilatation of the kidney",
                 [["No"], ["Yes"], ["Unknown"], ["NA"]])
-            if (page.value("pelvic_dilatation" + u) == "Yes") {
-                page.number("anteroposterior_diameter_of_the_renal_pelvis", "Measurements of the anteroposterior diameter of the renal pelvis on a transverse section in mm", {min:0,suffix:"mm"})
-                page.enum("evolution_of_APD","Evolution of the APD as compared to previous imaging exam",["Increased", "Stable", "Decreased","Unknown", "NA"])
-                page.number("extrarenal_pelvis_diameter","Measurements of the anteroposterior diameter of the extrarenal pelvis on a transverse section in mm",{min:0,suffix: "mm"})
+            if (page.value("pyelocaliceal_dilatation" + u) == "Yes") {
+                page.number("interlabial_pelvic_diameter", "Measurements of the anteroposterior diameter of the renal pelvis on a transverse section in mm", {min:0,suffix:"mm"})
+                page.enum("interlabial_pelvic_diameter_evolution","Evolution of the interlabial pelvic diameter as compared to previous imaging exam",["Increased", "Stable", "Decreased","Unknown", "NA"])
+                page.number("extrasinusal_pelvis","Measurements of the anteroposterior diameter of the extrarenal pelvis on a transverse section in mm",{min:0,suffix: "mm"})
                 page.enum("caliceal_dilatation","description of the appearance of the calyces",["No", "Cup-shaped calyces","Blunting of calyces","Ballooned Calyces","Unknown", "NA"])
                 }
             page.output(html`<u><b>Pelvis aspect</b></u>`)
@@ -86,9 +84,9 @@ page.section("Urinary upper tract", () => {
                 "Description of the echogenicity of the renal pelvis contents",
                 ["Normal", "Hypoechoic", "Hyperechoic", "Unknown", "NA"])
             page.output(html`<u><b>Parenchyma</b></u>`)
-            page.enum("echogenicity_of_parenchyma" + u,"Echogenicity of parenchyma",
+            page.enum("parenchyma_echogenicity" + u,"Echogenicity of parenchyma",
                 ["Normal","Hyperechogenic cortex","NA"])
-            page.enum("degree_of_corticomedullary_differentiation" + u,"Aspect of corticomedullary differentiation",
+            page.enum("corticomedullary_differentiation" + u,"Aspect of corticomedullary differentiation",
                 ["Normal","Decreased","No cortico medullary differentiation","NA"])
             page.enum("parenchyma_aspect" + u,"Description of cortex and medulla",
                 ["Normal","Short and thin medulla","No medulla & thin cortex","NA"])
@@ -103,8 +101,8 @@ page.section("Urinary upper tract", () => {
             page.output(html`<u><b>Ureter</b></u>`)
             page.enum("ureteral_dilatation" + u, "Ureteral dilatation, as evaluated by the physician",
                 ["No", "Yes","Yes,all the way through","Yes,in its abdominal portion","Yes, in its pelvic portion", "NA"])
-            page.number("diameter_of_retrovesical_ureter" + u, "Maximal measured diameter of the retrovesical ureter (mm)",{min:0,suffix:"mm"})
-            page.number("diameter_of_adbominal_ureter" + u, "Maximal measured diameter of the abdominal ureter (mm)",{min:0,suffix:"mm"})
+            page.number("ureteral_diameter_retrovesical" + u, "Maximal measured diameter of the retrovesical ureter (mm)",{min:0,suffix:"mm"})
+            page.number("ureteral_diameter_lumbar" + u, "Maximal measured diameter of the lumbar ureter (mm)",{min:0,suffix:"mm"})
             page.enum("ureter_wall" + u, "Presence of a thickened ureter",
                 ["Normal", "Thickened", "Unknown", "NA"])
     })
@@ -125,8 +123,8 @@ page.section("Urinary lower tract", () => {
        page.enum("location_of_the_bladder_wall_defect","Location of the bladder wall defect",["Diffuse", "Focal", "Unknown", "NA"])}
     page.number("bladder_wall_thickness","Measurement of bladder wall in mm",{min:0,suffix:"mm"})
     page.output(html`<u><b>Volume</b></u>`)
-    page.number("initial_bladder_volume","Initial bladder volume in ml",{min:0, suffix: "ml"})
-    page.number("post_void_residual_Bladder_Volume","Post void residual volume in ml",{min:0, suffix: "ml"})
+    page.number("bladder_volume","Initial bladder volume in ml",{min:0, suffix: "ml"})
+    page.number("post_void_residual_bladder_Volume","Post void residual volume in ml",{min:0, suffix: "ml"})
     page.output(html`<u><b>Urethra</b></u>`)
     page.enum("dilated_posterior_urethra","Urethra dilatation, as evaluated by the physician",["No", "Yes", "Unknown", "NA"])
     
