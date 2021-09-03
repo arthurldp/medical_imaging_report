@@ -1,7 +1,7 @@
 %YAML 1.2
 ---
 Exam:
-  schema: https://json-schema.org/draft/2019-09/schema#
+  schema: medical_imaging_report/us_urinarytract_obstruction_of_urine_flow/ICIPEMIR_us_urinarytract_obstruction_of_urine_flow.schema.json
   identifier: id12345678910
   patient_first_name: John
   patient_name: Doe
@@ -16,23 +16,23 @@ Exam:
   exam_indication: Unilateral left postnatal ureterohydronephrosis. Control after resection of valves of the posterior urethra.
   urinary_tract_duplication: "No"
   renal_transplant: "No"
-  abdominal_effusion: "No"
+  intraperitoneal_effusion: "No"
   urinary_upper_tract_results:
     urinary_upper_tract_id: [uut1, uut2]
-    lateralization: [Left, Right]
+    lateralisation: [Left, Right]
     diversion: [No, No]
     renal_height: [59, 56]
-    evolution_of_renal_height: [stable, stable]
+    renal_height_evolution: [stable, stable]
     previous_renal_height: [NA, NA]
-    pelvic_dilatation: [Yes, No]
-    anteroposterior_diameter_of_the_renal_pelvis: [20, 4]
-    evolution_of_APD: [Stable, Stable]
-    extrarenal_pelvis_diameter: [25, 4]
+    pyelocaliceal_dilatation: [Yes, No]
+    interlabial_pelvic_diameter: [20, 4]
+    interlabial_pelvic_diameter_evolution: [Stable, Stable]
+    extrasinusal_pelvis: [25, 4]
     caliceal_dilatation: [Cup-shaped, No]
     renal_pelvic_wall: [Normal, Normal]
     renal_pelvis_content_echogenicity: [Normal, Normal]
-    echogenicity_of_parenchyma: [Normal, Normal]
-    degree_of_cortico-medullary differentiation: [Decreased, Normal]
+    parenchyma_echogenicity: [Normal, Normal]
+    corticomedullary_differentiation: [Decreased, Normal]
     parenchyma_aspect: [short and thin medulla, Normal]
     parenchyma_thickness: [3, 5]
     cortical_cyst: [No, No]
@@ -40,8 +40,8 @@ Exam:
     ureterocele: [No, No]
     ureterocele_diameter: [NA, NA]
     ureteral_dilatation: [Yes, No]
-    diameter_of_retrovesical_ureter: [10, 0]
-    diameter_of_abdominal_ureter: [15, 0]
+    ureteral_diameter_retrovesical: [10, 0]
+    ureteral_diameter_lumbar: [15, 0]
     ureter_wall: [Normal, Normal]
   urinary_lower_tract_results:
     baldder_filling: [full]
@@ -49,7 +49,7 @@ Exam:
     bladder_wall: [thickened]
     location_of_the bladder_wall_defect: [diffuse]
     bladder_wall_thickness: 5
-    initial_bladder_Volume: 42
+    bladder_volume: 42
     post_void_residual_bladder_volume: 0
     dilated_posterior_urethra: [No]
   lithiasis: "No"
