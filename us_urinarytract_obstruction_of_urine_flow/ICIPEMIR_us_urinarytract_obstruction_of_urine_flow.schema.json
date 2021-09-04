@@ -73,16 +73,22 @@
 			"enum": ["No", "Right", "Left", "Unknown", "NA"],
 			"default": "No"
 		},
-		"diversion": {
+		"intraperitoneal_effusion": {
 			"type": "string",
-			"description": "Presence of a urinary diversion in the described urinary tract",
-			"enum": ["No", "Vesical probe", "Cystostomy", "NA"],
+			"description": "Presence of a intraperitoneal effusion",
+			"enum": ["No", "Presence", "Unknown", "NA"],
 			"default": "No"
 		},
 		"baldder_filling": {
 			"type": "string",
 			"description": "Appearance of bladder filling",
 			"enum": ["Empty", "Partially filled", "Full", "Unknown", "NA"]
+		},
+		"diversion": {
+			"type": "string",
+			"description": "Presence of a urinary diversion in the described urinary tract",
+			"enum": ["No", "Vesical probe", "Cystostomy", "NA"],
+			"default": "No"
 		},
 		"bladder_aspect": {
 			"type": "string",
@@ -126,12 +132,6 @@
 			"type": "string",
 			"description": "Free text for a comment manually added to the description of the lithiasis."
 		},
-		"intraperitoneal_effusion": {
-			"type": "string",
-			"description": "Presence of a intraperitoneal effusion",
-			"enum": ["No", "Presence", "Unknown", "NA"],
-			"default": "No"
-		},
 		"urinary_upper_tract_results": {
 			"type": "object",
 			"description": "Successive description of urinary tracts results, taking account of the (rare) possibility of anatomical variations",
@@ -158,7 +158,7 @@
 				},
 				"renal_height_evolution": {
 					"type": "string",
-					"description": "Evolution of the size according to the last ultrasound",
+					"description": "Evolution of the renal height according to the last ultrasound",
 					"enum": ["increase", "decrease", "stable", "Unknown", "NA"],
 					"default": "Unknown"
 				},
@@ -180,7 +180,7 @@
 				},
 				"interlabial_pelvic_diameter_evolution": {
 					"type": "string",
-					"description": "Evolution of the APD as compared to previous imaging exam",
+					"description": "Evolution of the interlabial pelvic diameter as compared to previous imaging exam",
 					"enum": ["Increased", "Stable", "Decreased", "Unknown", "NA"],
 					"default": "NA"
 				},
@@ -209,13 +209,13 @@
 				},
 				"parenchyma_echogenicity": {
 					"type": "string",
-					"description": "Echogenicity_of_parenchyma",
+					"description": "Echogenicity of parenchyma",
 					"enum": ["Normal", "Hyperechogenic cortex", "NA"],
 					"default": "Normal"
 				},
 				"corticomedullary_differentiation": {
 					"type": "string",
-					"description": "aspect of corticomedullary differentiation",
+					"description": "Aspect of corticomedullary differentiation",
 					"enum": ["Normal", "Decreased", "No corticomedullary differentiation", "NA"],
 					"default": "Normal"
 				},
@@ -242,7 +242,7 @@
 				},
 				"ureterocele": {
 					"type": "string",
-					"description": "ureterocele detected on the exam",
+					"description": "Ureterocele detected on the exam",
 					"enum": ["No", "presence", "NA"],
 					"default": "No"
 				},
