@@ -73,16 +73,16 @@
 			"enum": ["No", "Right", "Left", "Unknown", "NA"],
 			"default": "No"
 		},
-		"baldder_filling": {
-			"type": "string",
-			"description": "Appearance of bladder filling",
-			"enum": ["Empty", "Partially filled", "Full", "Unknown", "NA"]
-		},
 		"diversion": {
 			"type": "string",
 			"description": "Presence of a urinary diversion in the described urinary tract",
 			"enum": ["No", "Vesical probe", "Cystostomy", "NA"],
 			"default": "No"
+		},
+		"baldder_filling": {
+			"type": "string",
+			"description": "Appearance of bladder filling",
+			"enum": ["Empty", "Partially filled", "Full", "Unknown", "NA"]
 		},
 		"bladder_aspect": {
 			"type": "string",
