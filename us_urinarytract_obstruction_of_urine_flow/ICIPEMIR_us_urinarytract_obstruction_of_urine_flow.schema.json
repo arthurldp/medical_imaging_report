@@ -100,7 +100,7 @@
 			"description": "Measurement of bladder wall in mm",
 			"minimum": 0
 		},
-		"bladder_volume": {     vvvfd
+		"bladder_volume": {     
 			"type": "number",
 			"description": "Initial bladder volume in ml",
 			"minimum": 0
