@@ -13,9 +13,19 @@ Exam:
   exam_type: US
   device_model: Logic EX
   device_date: 2020-01-01
-  exam_indication: Unilateral left postnatal ureterohydronephrosis. Control after resection of valves of the posterior urethra.
+  exam_indication: Unilateral left postnatal ureterohydronephrosis. Control after resection posterior urethral valves.
   urinary_tract_duplication: "No"
   renal_transplant: "No"
+  baldder_filling: [full]
+  diversion: [No]
+  bladder_aspect: [thickened]
+  bladder_aspect_location: [diffuse]
+  bladder_wall_thickness: 5
+  bladder_volume: 42
+  post_void_residual_bladder_volume: 0
+  dilated_posterior_urethra: [No]
+  lithiasis: "No"
+  comment_on_lithiasis: NA
   intraperitoneal_effusion: "No"
   urinary_upper_tract_results:
     urinary_upper_tract_id: [uut1, uut2]
@@ -43,17 +53,6 @@ Exam:
     ureteral_diameter_retrovesical: [10, 0]
     ureteral_diameter_lumbar: [15, 0]
     ureter_wall: [Normal, Normal]
-  urinary_lower_tract_results:
-    baldder_filling: [full]
-    diversion: [No]
-    bladder_aspect: [thickened]
-    location_of_the bladder_wall_defect: [diffuse]
-    bladder_wall_thickness: 5
-    bladder_volume: 42
-    post_void_residual_bladder_volume: 0
-    dilated_posterior_urethra: [No]
-  lithiasis: "No"
-  comment_on_lithiasis: NA
   conclusion: Unilateral left ureterohydronephrosis. Integrity of the right kidney
   comment: NA
   conclusion_validation: true
