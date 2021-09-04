@@ -73,6 +73,59 @@
 			"enum": ["No", "Right", "Left", "Unknown", "NA"],
 			"default": "No"
 		},
+		"baldder_filling": {
+			"type": "string",
+			"description": "Appearance of bladder filling",
+			"enum": ["Empty", "Partially filled", "Full", "Unknown", "NA"]
+		},
+		"diversion": {
+			"type": "string",
+			"description": "Presence of a urinary diversion in the described urinary tract",
+			"enum": ["No", "Vesical probe", "Cystostomy", "NA"],
+			"default": "No"
+		},
+		"bladder_aspect": {
+			"type": "string",
+			"description": "Description of bladder wall",
+			"enum": ["Normal", "Thickened", "Trabeculation", "Diverticular", "Unknown", "NA"],
+			"default": "Normal"
+		},
+		"bladder_aspect_location": {
+			"type": "string",
+			"description": "Location of the bladder wall aspect",
+			"enum": ["Diffuse", "Focal", "Unknown", "NA"]
+		},
+		"bladder_wall_thickness": {
+			"type": "number",
+			"description": "Measurement of bladder wall in mm",
+			"minimum": 0
+		},
+		"bladder_volume": {     vvvfd
+			"type": "number",
+			"description": "Initial bladder volume in ml",
+			"minimum": 0
+		},
+		"post_void_residual_bladder_volume": {
+			"type": "number",
+			"description": "Post void residual volume in ml",
+			"minimum": 0
+		},
+		"dilated_posterior_urethra": {
+			"type": "string",
+			"description": "Urethra dilatation, as evaluated by the physician",
+			"enum": ["No", "Yes", "Unknown", "NA"],
+			"default": "No"
+		},
+		"lithiasis": {
+			"type": "string",
+			"description": "lithiasis detected on the exam",
+			"enum": ["No", "presence", "NA"],
+			"default": "No"
+		},
+		"comment_on_lithiasis": {
+			"type": "string",
+			"description": "Free text for a comment manually added to the description of the lithiasis."
+		},
 		"intraperitoneal_effusion": {
 			"type": "string",
 			"description": "Presence of a intraperitoneal effusion",
@@ -221,65 +274,6 @@
 					"default": "Normal"
 				}
 			}
-		},
-		"urinary_lower_tract_results": {
-			"type": "object",
-			"description": "Description of urinary lower tracts results, taking account of the (rare) possibility of anatomical variations",
-			"properties": {
-				"baldder_filling": {
-					"type": "string",
-					"description": "Appearance of bladder filling",
-					"enum": ["Empty", "Partially filled", "Full", "Unknown", "NA"]
-				},
-				"diversion": {
-					"type": "string",
-					"description": "Presence of a urinary diversion in the described urinary tract",
-					"enum": ["No", "Vesical probe", "Cystostomy", "NA"],
-					"default": "No"
-				},
-				"bladder_wall": {
-					"type": "string",
-					"description": "Description of bladder wall",
-					"enum": ["Normal", "Thickened", "Trabeculation", "d*Diverticular", "Unknown", "NA"],
-					"default": "Normal"
-				},
-				"location_of_the_bladder_wall_defect": {
-					"type": "string",
-					"description": "Location of the bladder wall defect",
-					"enum": ["Diffuse", "Focal", "Unknown", "NA"]
-				},
-				"bladder_wall_thickness": {
-					"type": "number",
-					"description": "Measurement of bladder wall in mm",
-					"minimum": 0
-				},
-				"bladder_volume": {
-					"type": "number",
-					"description": "Initial bladder volume in ml",
-					"minimum": 0
-				},
-				"post_void_residual_bladder_volume": {
-					"type": "number",
-					"description": "Post void residual volume in ml",
-					"minimum": 0
-				},
-				"dilated_posterior_urethra": {
-					"type": "string",
-					"description": "Urethra dilatation, as evaluated by the physician",
-					"enum": ["No", "Yes", "Unknown", "NA"],
-					"default": "No"
-				}
-			}
-		},
-		"lithiasis": {
-			"type": "string",
-			"description": "lithiasis detected on the exam",
-			"enum": ["No", "presence", "NA"],
-			"default": "No"
-		},
-		"comment_on_lithiasis": {
-			"type": "string",
-			"description": "Free text for a comment manually added to the description of the lithiasis."
 		},
 		"conclusion": {
 			"type": "string",
