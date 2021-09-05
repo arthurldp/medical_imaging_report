@@ -53,7 +53,7 @@ page.section("Urinary upper tract", () => {
             page.enumDrop("lateralisation" + u, 
                 "Lateralisation of the urinary upper tract to be described", 
                 ["Left", "Right", "Left upper pole", "Left lower pole", "Right upper pole", "Right lower pole", "Left renal transplant", "Right renal transplant"])
-            page.enum("diversion" + u, 
+            page.enum("upper_tract_diversion" + u, 
                 "Presence of a urinary diversion in the described urinary tract",
                 ["No", "jj stent", "ureteral catheter", "pyelostomy", "NA"])
             page.output(html`<u><b>Size</b></u>`)
@@ -67,14 +67,14 @@ page.section("Urinary upper tract", () => {
             page.number("previous_renal_height" + u,
                 "Previous measured heigh of the kidney", {min:0,suffix:"mm"}) }
             page.output(html`<u><b>Dilatation</b></u>`)
-            page.enum("pyelocaliceal_dilatation" + u, 
+            page.enum("pyelocalyceal_dilatation" + u, 
                 "Presence of pelvic dilatation of the kidney",
                 [["No"], ["Yes"], ["Unknown"], ["NA"]])
-            if (page.value("pyelocaliceal_dilatation" + u) == "Yes") {
+            if (page.value("pyelocalyceal_dilatation" + u) == "Yes") {
                 page.number("interlabial_pelvic_diameter", "Measurements of the anteroposterior diameter of the renal pelvis on a transverse section in mm", {min:0,suffix:"mm"})
                 page.enum("interlabial_pelvic_diameter_evolution","Evolution of the interlabial pelvic diameter as compared to previous imaging exam",["Increased", "Stable", "Decreased","Unknown", "NA"])
                 page.number("extrasinusal_pelvis","Measurements of the anteroposterior diameter of the extrarenal pelvis on a transverse section in mm",{min:0,suffix: "mm"})
-                page.enum("caliceal_dilatation","description of the appearance of the calyces",["No", "Cup-shaped calyces","Blunting of calyces","Ballooned Calyces","Unknown", "NA"])
+                page.enum("calyceal_dilatation","description of the appearance of the calyces",["No", "Cup-shaped calyces","Blunting of calyces","Ballooned Calyces","Unknown", "NA"])
                 }
             page.output(html`<u><b>Pelvis aspect</b></u>`)
             page.enum("renal_pelvic_wall" + u, 
@@ -112,7 +112,7 @@ page.section("Urinary upper tract", () => {
 
 page.section("Urinary lower tract", () => { 
    page.enum("baldder_filling","Appearance of bladder filling",["empty", "partially filled", "Full", "Unknown", "NA"])
-   page.enum("diversion","Presence of a urinary diversion in the described urinary tract",["No", "vesical probe", "cystostomy", "NA"])
+   page.enum("diversion","Presence of a urinary diversion in the described urinary tract",["No", "Bladder catheter", "Supra-pubic catheter", "Cystostomy", "NA"])
    page.output(html`<u><b>Bladder wall</b></u>`)
    page.enum("bladder_aspect","Description of bladder wall",["Normal", "Thickened", "Trabeculation", "Diverticular", "Unknown", "NA"])
    if (page.value("bladder_aspect") == ["Thickened"]) {
@@ -122,6 +122,7 @@ page.section("Urinary lower tract", () => {
    if (page.value("bladder_aspect") == ["Diverticular"]) {
        page.enum("location_of_the_bladder_wall_defect","Location of the bladder wall defect",["Diffuse", "Focal", "Unknown", "NA"])}
     page.number("bladder_wall_thickness","Measurement of bladder wall in mm",{min:0,suffix:"mm"})
+    page.enum("bladder_contents","Urine appearance in the bladder",["Anechoic", "Echoic", "Unknown", "NA"])
     page.output(html`<u><b>Volume</b></u>`)
     page.number("bladder_volume","Initial bladder volume in ml",{min:0, suffix: "ml"})
     page.number("post_void_residual_bladder_Volume","Post void residual volume in ml",{min:0, suffix: "ml"})
