@@ -16,19 +16,19 @@ Exam:
   exam_indication: Unilateral left postnatal ureterohydronephrosis. Control after resection posterior urethral valves.
   urinary_tract_duplication: "No"
   renal_transplant: "No"
-  baldder_filling: [full]
-  diversion: [No]
-  bladder_aspect: [thickened]
-  bladder_aspect_location: [diffuse]
+  baldder_filling: full
+  diversion: "No"
+  bladder_aspect: thickened
+  bladder_aspect_location: diffuse
   bladder_wall_thickness: 5
   bladder_volume: 42
   post_void_residual_bladder_volume: 0
-  dilated_posterior_urethra: [No]
+  dilated_posterior_urethra: "No"
   lithiasis: "No"
   comment_on_lithiasis: NA
   intraperitoneal_effusion: "No"
-  urinary_upper_tract_results:
-    urinary_upper_tract_id: [uut1, uut2]
+  upper_urinary_tract_results:
+    upper_urinary_tract_id: [uut1, uut2]
     lateralisation: [Left, Right]
     diversion: [No, No]
     renal_height: [59, 56]
@@ -38,7 +38,7 @@ Exam:
     interlabial_pelvic_diameter: [20, 4]
     interlabial_pelvic_diameter_evolution: [Stable, Stable]
     extrasinusal_pelvis: [25, 4]
-    caliceal_dilatation: [Cup-shaped, No]
+    caliceal_aspect: [Cup-shaped, No]
     renal_pelvic_wall: [Normal, Normal]
     renal_pelvis_content_echogenicity: [Normal, Normal]
     parenchyma_echogenicity: [Normal, Normal]
@@ -49,7 +49,7 @@ Exam:
     comment_on_cyst: NA
     ureterocele: [No, No]
     ureterocele_diameter: [NA, NA]
-    ureteral_dilatation: [Yes, No]
+    ureteral_dilatation: [Abdominal + pelvic ureter, No]
     ureteral_diameter_retrovesical: [10, 0]
     ureteral_diameter_lumbar: [15, 0]
     ureter_wall: [Normal, Normal]
