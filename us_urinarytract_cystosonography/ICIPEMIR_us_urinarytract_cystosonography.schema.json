@@ -82,54 +82,20 @@
 			"description": "Urinalaysis",
 			"enum": ["Urine test strip", "CBEU"]
 		},
-		"condition_diversion": {
-			"type": "string",
-			"description": "Presence of a urinary diversion in the described urinary tract",
-			"enum": ["No", "JJ stent", "Ureteral catheter", "Pyelostomy", "NA"],
-			"default": "No"
-		},
 		"condition_exam_duration": {
 			"type": "string",
 			"description": "Exam duration",
 			"format": "duration"
 		},
+		"condition_quality": {
+			"type": "string",
+			"description": "condition procedure examen",
+			"enum": ["good", "medium", "NA"]
+		},		
 		"antibiotic_prophylaxis": {
 			"type": "string",
 			"description": "Antibiotic",
 			"enum": ["prophylaxis", "curatif", "No"]
-		},
-		"abnormal_urinary_tract": {
-			"type": "string",
-			"description": "Abnormal urinary tract, as described by the physician",
-			"enum": ["Yes", "No"]
-		},
-		"urinary_tract_duplication": {
-			"type": "string",
-			"description": "Duplication of urinary tract resulting in an 'additionnal' urinary tract to describe",
-			"enum": ["No", "Right", "Left", "Bilateral", "Unknown", "NA"],
-			"default": "No"
-		},
-		"parenchymal_atrophy": {
-			"type": "string",
-			"description": "Parenchymal atrophy, as described by the physician",
-			"enum": ["Yes", "No"]
-		},
-		"renal_differentiation": {
-			"type": "string",
-			"description": "Differentiation of renal parenchyma",
-			"enum": ["regular", "reduced", "missing"]
-		},
-		"cyst": {
-			"type": "string",
-			"description": "Presence of a cyst",
-			"enum": ["No", "Yes", "NA"],
-			"default": "No"
-		},
-		"renal_transplant": {
-			"type": "string",
-			"description": "Presence of a renal transplant resulting in an 'additionnal' urinary tract to describe",
-			"enum": ["No", "Right", "Left", "Unknown", "NA"],
-			"default": "No"
 		},
 		"bladder_aspect": {
 			"type": "string",
@@ -139,17 +105,16 @@
 		},
 		"bladder_volume": {
 			"type": "number",
-			"description": "Bladder volume"
+			"description": "Bladder volume (ml)"
+		},
+		"post_void_residual_bladder_volume": {
+			"type": "number",
+			"description": "post void residual Bladder Volume (ml)"
 		},
 		"urethra": {
 			"type": "string",
 			"description": "Urethra aspect",
 			"enum": ["normal", "pathological", "NA"]
-		},
-		"condition_quality": {
-			"type": "string",
-			"description": "condition procedure examen",
-			"enum": ["good", "medium", "NA"]
 		},
 		"intraperitoneal_effusion": {
 			"type": "string",
@@ -157,29 +122,61 @@
 			"enum": ["Yes", "No", "NA"],
 			"default": "No"
 		},
+		"urinary_tract_duplication": {
+			"type": "string",
+			"description": "Duplication of urinary tract resulting in an 'additionnal' urinary tract to describe",
+			"enum": ["No", "Right", "Left", "Bilateral", "Unknown", "NA"],
+			"default": "No"
+		},
 		"comment": {
 			"type": "string",
 			"description": "Free text for manually added results, or comment"
 		},
-		"urinary_tract_results": {
+		"urinary_tract_result": {
 			"type": "object",
 			"description": "Successive description of urinary tracts results, taking account of the (rare) possibility of anatomical variations",
 			"properties": {
 				"urinary_upper_tract_id": {
-					"type": "string",
+					"type": "categorical",
 					"description": "Generated hash id for each successively described urinary tract"
 				},
 				"lateralisation": {
-					"type": "string",
+					"type": "categorical",
 					"description": "Lateralisation of the urinary tract to be described",
 					"enum": ["Left", "Right", "Left upper pole", "Left lower pole", "Right upper pole", "Right lower pole", "Left renal transplant", "Right renal transplant"]
 				},
-				"diversion": {
-					"type": "string",
+				"upper_tract_diversion": {
+					"type": "categorical",
 					"description": "Presence of a urinary diversion in the described urinary tract",
 					"enum": ["No", "JJ stent", "Ureteral catheter", "Pyelostomy", "NA"],
 					"default": "No"
 				},
+				"pyelonephritis_sign": {
+					"type": "categorical",
+					"description": "Pyelonephritis sign",
+					"enum": ["Yes", "No", "NA"]
+				},
+				"renal_contour_deformtity": {
+					"type": "string",
+					"description": "Kidney morphology, as evaluated by the physician",
+					"enum": ["Normal", "Abnormal", "NA"]
+				},				
+				"renal_parenchyma": {
+					"type": "categorical",
+					"description": "Renal parenchyma, as discribed by the physician",
+					"enum": ["normal", "atrophy", "cortical cyst", "thickened", "NA"]
+				},	
+				"renal_differentiation": {
+					"type": "categorical",
+					"description": "Differentiation of renal parenchyma",
+					"enum": ["regular", "reduced", "missing"]
+				},
+				"renal_transplant": {
+					"type": "categorical",
+					"description": "Presence of a renal transplant resulting in an 'additionnal' urinary tract to describe",
+					"enum": ["No", "Right", "Left", "Unknown", "NA"],
+					"default": "No"
+				},		
 				"renal_height": {
 					"type": "number",
 					"description": "Measured height of the kidney (mm)",
@@ -190,50 +187,45 @@
 					"description": "Measured diameter of the kidney (mm)",
 					"minimum": 0
 				},
-				"previous_kidney_height": {
-					"type": "number",
-					"description": "Kidney diameter measured previously (mm)",
-					"minimum": 0
-				},
-				"pelvic_interlabial_diameter": {
-					"type": "number",
-					"description": "Measured diameter of the interlabial pelvic (mm)",
-					"minimum": 0
-				},
-				"pelvic_extrasinusal_diameter": {
-					"type": "number",
-					"description": "Measured diameter of the extrasinusal pelvic (mm)",
-					"minimum": 0
-				},
-				"pyelonephritis_sign": {
-					"type": "string",
-					"description": "Pyelonephritis sign",
-					"enum": ["Yes", "No", "NA"]
-				},
-				"vesico_ureteral_reflux": {
-					"type": "string",
-					"description": "Vesico ureteral reflux, as evaluated and graduated by the physician",
-					"enum": ["grade 1", "grade 2", "grade 3", "grade 4", "grade 5", "No"]
-				},
-				"renal_morphology": {
-					"type": "string",
-					"description": "Kidney morphology, as evaluated by the physician",
-					"enum": ["Normal", "Abnormal", "NA"]
-				},
-				"renal_parenchymal": {
-					"type": "string",
-					"description": "Renal parenchyma, as discribed by the physician",
-					"enum": ["normal", "atrophy", "cyst", "thickened", "NA"]
-				},
 				"renal_volume": {
 					"type": "number",
 					"description": "Renal volume, as measured by the physician (ml)",
 					"minimum": 0
+				},				
+				"previous_renal_height": {
+					"type": "number",
+					"description": "Kidney diameter measured previously (mm)",
+					"minimum": 0
 				},
+				"pyelocalyceal_dilatation": {
+					"type": "categorical",
+					"description": "Presence of a pyelocaliceal dilatation, as described by the physician",
+					"enum": ["Yes", "No", "NA"]
+				},
+				"interlabial_pelvis_diameter": {
+					"type": "number",
+					"description": "Measured diameter of the interlabial pelvic (mm)",
+					"minimum": 0
+				},
+				"extrasinusal_pelvis": {
+					"type": "number",
+					"description": "Measured diameter of the extrasinusal pelvic (mm)",
+					"minimum": 0
+				},
+				"abnormal_urinary_tract": {
+					"type": "string",
+					"description": "Abnormal urinary tract, as described by the physician",
+					"enum": ["Yes", "No"]
+				},				
 				"pelvic_junction": {
 					"type": "string",
 					"description": "presence of a pelvic junction",
 					"enum": ["Yes", "No", "NA"]
+				},				
+				"vesico_ureteral_reflux": {
+					"type": "string",
+					"description": "Vesico ureteral reflux, as evaluated and graduated by the physician",
+					"enum": ["grade 1", "grade 2", "grade 3", "grade 4", "grade 5", "No"]
 				},
 				"comment_on_urinary_tract": {
 					"type": "string",
