@@ -31,7 +31,7 @@ Exam:
   upper_urinary_tract_results:
     upper_urinary_tract_id: [uut1, uut2]
     lateralisation: [Left, Right]
-    diversion: [No, No]
+    upper_tract_diversion: [No, No]
     renal_height: [59, 56]
     renal_height_evolution: [stable, stable]
     previous_renal_height: [NA, NA]
