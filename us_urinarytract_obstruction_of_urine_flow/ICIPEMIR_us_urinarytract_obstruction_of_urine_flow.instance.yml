@@ -6,7 +6,7 @@ Exam:
   patient_first_name: John
   patient_name: Doe
   patient_birth: 2020-01-01
-  patient_gender: "male"
+  patient_gender: male
   institution: CHR
   physician: Dr No
   exam_date_time: 2021-03-03T14:14:00
@@ -21,6 +21,7 @@ Exam:
   bladder_aspect: thickened
   bladder_aspect_location: diffuse
   bladder_wall_thickness: 5
+  bladder_contents : anechoic
   bladder_volume: 42
   post_void_residual_bladder_volume: 0
   dilated_posterior_urethra: "No"
