@@ -28,7 +28,7 @@ Exam:
   lithiasis: "No"
   comment_on_lithiasis: NA
   intraperitoneal_effusion: "No"
-  upper_urinary_tract_results:
+  upper_urinary_tract_result:
     upper_urinary_tract_id: [uut1, uut2]
     lateralisation: [Left, Right]
     upper_tract_diversion: [No, No]
