@@ -1,6 +1,6 @@
 {
 	"$schema": "https://json-schema.org/draft/2019-09/schema#",
-	"title": "Ultrasound of the urinary tract",
+	"title": "Ultrasound report for the urinary tract, obstruction of urine flow",
 	"type": "object",
 	"required": ["patient_first_name", "patient_first_name", "patient_birth", "conclusion_validation"],
 	"properties": {
@@ -54,7 +54,7 @@
 		},
 		"device_date": {
 			"type": "string",
-			"description": "Date of device validation",
+			"description": "Date of device validation, format yyyy-mm-dd",
 			"format": "date"
 		},
 		"exam_indication": {
@@ -87,7 +87,7 @@
 		"diversion": {
 			"type": "string",
 			"description": "Presence of a urinary diversion in the described urinary tract",
-			"enum": ["No", "Vesical probe", "Cystostomy", "NA"],
+			"enum": ["No", "Bladder catheter", "Supra-pubic catheter", "Cystostomy", "NA"],
 			"default": "No"
 		},
 		"bladder_aspect": {
@@ -118,21 +118,21 @@
 		},
 		"dilated_posterior_urethra": {
 			"type": "string",
-			"description": "Urethra dilatation, as evaluated by the physician",
+			"description": "Dilatation of the posterior urethra, as evaluated by the physician",
 			"enum": ["No", "Yes", "Unknown", "NA"],
 			"default": "No"
 		},
 		"lithiasis": {
 			"type": "string",
 			"description": "lithiasis detected on the exam",
-			"enum": ["No", "presence", "NA"],
+			"enum": ["No", "Presence", "NA"],
 			"default": "No"
 		},
 		"comment_on_lithiasis": {
 			"type": "string",
 			"description": "Free text for a comment manually added to the description of the lithiasis."
 		},
-		"urinary_upper_tract_results": {
+		"upper_urinary_tract_results": {
 			"type": "object",
 			"description": "Successive description of urinary tracts results, taking account of the (rare) possibility of anatomical variations",
 			"properties": {
@@ -148,7 +148,7 @@
 				"diversion": {
 					"type": "string",
 					"description": "Presence of a urinary diversion in the described urinary tract",
-					"enum": ["No", "jj_stent", "ureteral_catheter", "pyelostomy", "NA"],
+					"enum": ["No", "JJ stent", "Ureteral catheter", "Nephrostomy", "NA"],
 					"default": "No"
 				},
 				"renal_height": {
@@ -159,7 +159,7 @@
 				"renal_height_evolution": {
 					"type": "string",
 					"description": "Evolution of the renal height according to the last ultrasound",
-					"enum": ["increase", "decrease", "stable", "Unknown", "NA"],
+					"enum": ["Increase", "Stable", "Decrease", "Unknown", "NA"],
 					"default": "Unknown"
 				},
 				"previous_renal_height": {
@@ -189,10 +189,10 @@
 					"description": "Measurements diameter of the extrarenal pelvis on a transverse section in mm",
 					"minimum": 0
 				},
-				"caliceal_dilatation": {
+				"caliceal_aspect": {
 					"type": "string",
 					"description": "Description of the appearance of the calyces",
-					"enum": ["No", "Cup-shaped calyces", "Blunting of calyces", "Ballooned Calyces", "Unknown", "NA"],
+					"enum": ["No", "Cup-shaped", "Blunting", "Ballooned", "Unknown", "NA"],
 					"default": "No"
 				},
 				"renal_pelvic_wall": {
@@ -210,7 +210,7 @@
 				"parenchyma_echogenicity": {
 					"type": "string",
 					"description": "Echogenicity of parenchyma",
-					"enum": ["Normal", "Hyperechogenic cortex", "NA"],
+					"enum": ["Normal", "Hyperechoic cortex", "NA"],
 					"default": "Normal"
 				},
 				"corticomedullary_differentiation": {
@@ -232,7 +232,7 @@
 				},
 				"cortical_cyst": {
 					"type": "string",
-					"description": "Cysts detected on the exam",
+					"description": "Cortical cysts detected on the exam",
 					"enum": ["No", "presence", "NA"],
 					"default": "No"
 				},
@@ -254,7 +254,7 @@
 				"ureteral_dilatation": {
 					"type": "string",
 					"description": "Ureteral dilatation, as evaluated by the physician",
-					"enum": ["No", "Yes", "Yes,all the way through", "Yes,in its abdominal portion", "Yes, in its pelvic portion", "NA"],
+					"enum": ["No", "Abdominal + pelvic ureter", "Abdominal ureter", "Pelvic ureter", "NA"],
 					"default": "No"
 				},
 				"ureteral_diameter_retrovesical": {
