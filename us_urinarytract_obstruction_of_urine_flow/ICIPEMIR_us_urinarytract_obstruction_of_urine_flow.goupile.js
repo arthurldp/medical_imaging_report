@@ -25,8 +25,6 @@ page.section("Exam", () => {
     page.text("device_model", "Imaging device model",) 
     page.date("device_date", "Date of imaging device validation"),
     page.text("exam_indication", "Indication",)
-    page.enum("condition_derivation", "Urinary tract diversion in place at the time of the exam",
-        ["No", "Bladder drainage", "Upper tract drainage", "NA"])
     })
 
 // Results
