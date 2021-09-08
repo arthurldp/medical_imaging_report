@@ -116,6 +116,17 @@
 			"description": "Urethra aspect",
 			"enum": ["normal", "pathological", "NA"]
 		},
+		"renal_transplant": {
+			"type": "categorical",
+			"description": "Presence of a renal transplant resulting in an 'additionnal' urinary tract to describe",
+			"enum": ["No", "Right", "Left", "Unknown", "NA"],
+			"default": "No"
+		},
+		"abnormal_urinary_tract": {
+			"type": "string",
+			"description": "Abnormal urinary tract, as described by the physician",
+			"enum": ["Yes", "No"]
+		},
 		"intraperitoneal_effusion": {
 			"type": "string",
 			"description": "intraperitoneal effusion, as describe by the physician",
@@ -170,12 +181,6 @@
 					"type": "categorical",
 					"description": "Differentiation of renal parenchyma",
 					"enum": ["regular", "reduced", "missing"]
-				},
-				"renal_transplant": {
-					"type": "categorical",
-					"description": "Presence of a renal transplant resulting in an 'additionnal' urinary tract to describe",
-					"enum": ["No", "Right", "Left", "Unknown", "NA"],
-					"default": "No"
 				},		
 				"renal_height": {
 					"type": "number",
@@ -211,11 +216,6 @@
 					"type": "number",
 					"description": "Measured diameter of the extrasinusal pelvic (mm)",
 					"minimum": 0
-				},
-				"abnormal_urinary_tract": {
-					"type": "string",
-					"description": "Abnormal urinary tract, as described by the physician",
-					"enum": ["Yes", "No"]
 				},				
 				"pelvic_junction": {
 					"type": "string",
