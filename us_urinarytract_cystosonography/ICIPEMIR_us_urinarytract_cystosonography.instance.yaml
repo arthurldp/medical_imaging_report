@@ -1,0 +1,52 @@
+%YAML 1.2
+---
+Exam:
+  schema: ICIPEMIR_us_urinarytract_cystosonography.schema.json
+  identifier: id3139489200
+  patient_first_name: John
+  patient_name: Doe
+  patient_birth: 2020-01-01
+  patient_gender: Male
+  physician: Dr. No
+  institution: CHR
+  exam_date_time: 2021-09-09
+  exam_type: Cystosonography
+  device_model: APPLIO 500 - Toshiba + Sonovue
+  device_date: 2020-01-01
+  exam_indication: pyelonephritis
+  exam_previous: cystography
+  condition_contrast_route: ureteral
+  condition_fillings: 2
+  condition_urinalysis: CBEU
+  condition_exam_duration: 20 minutes
+  condition_quality: good
+  antibiotic_prophylaxis: "No"
+  bladder_aspect: Normal
+  bladder_volume: 110ml
+  post_void_residual_bladder_volume: 0ml
+  urethra: Normal
+  renal_transplant: "No"
+  abnormal_urinary_tract: "No"
+  intraperitoneal_effusion: "No"
+  urinary_tract_duplication: "No"
+  comment: NA
+  urinary_tract_result:
+      urinary_upper_tract_id: [uut1, uut2]
+      lateralisation: [Left, Right]
+      upper_tract_diversion: ["No", "No"]
+      pyelonephritis_sign: ["No", "No"]
+      renal_contour_deformtity: [Normal, Normal]
+      renal_parenchyma: [Normal, Normal]
+      renal_differentiation: [Regular, Regular]
+      renal_height: [45, 40]
+      renal_diameter: [30,35]
+      renal_volume: [450, 400]
+      previous_renal_height: [NA, NA]
+      pyelocalyceal_dilatation: ["No", "Yes"]
+      interlabial_pelvis_diameter: [6, 20]
+      extrasinusal_pelvis: [6, 24]
+      pelvic_junction: ["No", "No"]
+      vesico_ureteral_reflux: ["No", Grade IV]
+      comment_on_urinary_tract: [NA, NA]
+  conclusion: Unilateral right vesico ureteral reflux, grade IV. Integrity of the left kidney.
+  conclusion_validation: true
