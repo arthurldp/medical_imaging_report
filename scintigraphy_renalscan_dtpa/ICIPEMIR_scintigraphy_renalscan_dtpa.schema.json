@@ -148,12 +148,12 @@
 				"diversion": {
 					"type": "string",
 					"description": "Presence of a urinary diversion in the described urinary tract",
-					"enum": ["No", "JJ stent", "Ureteral catheter", "Pyelostomy", "NA"],
+					"enum": ["No", "JJ stent", "Ureteral catheter", "Nephrostomy", "NA"],
 					"default": "No"
 				},
 				"cortical_transit_time": {
 					"type": "string",
-					"description": "Visual estimation of Cortical transit timedescribed using ISO 8601 ABNF: P(n)Y(n)M(n)DT(n)H(n)M(n)S",
+					"description": "Visual estimation of Cortical transit time described using ISO 8601 ABNF: P(n)Y(n)M(n)DT(n)H(n)M(n)S",
 					"format": "duration"
 				},
 				"cortical_transit_time_evaluation": {
