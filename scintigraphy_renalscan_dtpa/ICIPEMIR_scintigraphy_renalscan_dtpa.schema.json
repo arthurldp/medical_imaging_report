@@ -1,9 +1,9 @@
 {
 	"$schema": "https://json-schema.org/draft/2019-09/schema#",
-	"title": "DTPA Renal Scan Report",
+	"title": " Dynamic Renal Scintigraphy Report",
 	"type": "object",
-    "required": ["patient_first_name", "patient_first_name", "patient_birth", "conclusion_validation"],
-    "properties": {
+	"required": ["patient_first_name", "patient_first_name", "patient_birth", "conclusion_validation"],
+	"properties": {
 		"identifier": {
 			"type": "string",
 			"description": "Patient unique identifier",
@@ -21,7 +21,7 @@
 		},
 		"patient_birth": {
 			"type": "string",
-			"description": "Date of birth, format yyyy-mm-dd",
+			"description": "Date of birth, format ISO 8601 yyyy-mm-dd",
 			"format": "date"
 		},
 		"physician": {
@@ -31,24 +31,24 @@
 		"institution": {
 			"type": "string",
 			"description": "Institution in which the exam is performed"
-		},		
+		},
 		"exam_date_time": {
 			"type": "string",
-			"description": "Date and time of exam, format yyyy-mm-ddThh:mm:ss",
+			"description": "Date and time of exam, format ISO 8601 yyyy-mm-ddThh:mm:ss",
 			"format": "date-time"
 		},
 		"exam_type": {
 			"type": "string",
 			"description": "Exam type",
-			"enum": ["Scintigraphy", "NA"]
+			"enum": ["Renal Scintigraphy", "NA"]
 		},
 		"device_model": {
 			"type": "string",
-			"description": "Model of imaging device"
+			"description": "Model of imaging device / ex: Caméra SYMBIA T2, NIS 1165"
 		},
 		"device_date": {
 			"type": "string",
-			"description": "Date of device validation",
+			"description": "Date of device validation, format ISO 8601 yyyy-mm-dd",
 			"format": "date"
 		},
 		"exam_indication": {
@@ -58,14 +58,14 @@
 		},
 		"activity": {
 			"type": "number",
-			"description": "Total activity, in Mega Becquerel",
+			"description": "Total injected activity, in Mega Becquerel",
 			"minimum": 0
 		},
 		"tracer": {
 			"type": "string",
-			"description": "Radio tracer, Technetium-99m Diethylenetriaminepentaacetic acid, Technetium-99m Mercaptuacetyltriglycine. ",
-			"enum": ["99mTC DTPA", "99mTC MAG3", "NA"],
-			"default": "99mTC DTPA"
+			"description": "Radiopharmaceutical, Technetium-99m-diethylenetriaminepenta-acetic acid, Technetium-99m-mercaptoacetyltriglycine. ",
+			"enum": ["99mTC-DTPA", "99mTC-MAG3", "NA"],
+			"default": "99mTC-DTPA"
 		},
 		"injection_site": {
 			"type": "string",
@@ -76,8 +76,8 @@
 		"patient_position": {
 			"type": "string",
 			"description": "Position of the patient during image captation",
-			"enum": ["Lying", "Sitting", "NA"],
-			"default": "Lying"
+			"enum": ["Lying supine", "Sitting", "NA"],
+			"default": "Lying supine"
 		},
 		"furosemid_injection": {
 			"type": "string",
@@ -86,18 +86,23 @@
 		},
 		"acquisition_time": {
 			"type": "string",
-			"description": "Duration of acquisition, ISO 8601 ABNF: P(n)Y(n)M(n)DT(n)H(n)M(n)S",
+			"description": "Duration of acquisition, ISO 8601: P(n)Y(n)M(n)DT(n)H(n)M(n)S",
 			"format": "duration"
+		},
+		"static_image ": {
+			"type": "string",
+			"description": "static acquisition",
+			"enum": ["post-void", "delayed", "NA"]
 		},
 		"renogram_curve": {
 			"type": "string",
 			"description": "Comparison of both renogram curves",
-			"enum": ["Normal", "Abnormal", "NA"],
+			"enum": ["Normal", "Abnormal", "NA"]
 		},
 		"calculation_method": {
 			"type": "string",
 			"description": "Calculation method used for renal function estimation",
-			"enum": ["Patlack", "AUC", "NA"],
+			"enum": ["Patlack", "AUC", "NA"]
 		},
 		"urinary_tract_duplication": {
 			"type": "string",
@@ -110,13 +115,13 @@
 			"description": "Presence of a renal transplant resulting in an 'additionnal' urinary tract to describe",
 			"enum": ["No", "Right", "Left", "Unknown", "NA"],
 			"default": "No"
-		},	
+		},
 		"bladder_diversion": {
 			"type": "string",
 			"description": "Bladder diversion in place at the time of the exam",
 			"enum": ["No", "Yes", "NA"],
 			"default": "No"
-		},	
+		},
 		"bladder_onset": {
 			"type": "string",
 			"description": "Bladder onset time, described according to ISO 8601 ABNF: P(n)Y(n)M(n)DT(n)H(n)M(n)S",
@@ -126,7 +131,7 @@
 			"type": "string",
 			"description": "Renal function symmetry, according to the physician's evaluation",
 			"enum": ["Symmetric", "Assymetric", "NA"]
-		},	
+		},
 		"urinary_tract_results": {
 			"type": "object",
 			"description": "Successive description of urinary tracts results, taking account of the (rare) possibility of anatomical variations",
@@ -148,13 +153,13 @@
 				},
 				"cortical_transit_time": {
 					"type": "string",
-					"description": "Cortical transit time, described using ISO 8601 ABNF: P(n)Y(n)M(n)DT(n)H(n)M(n)S",
+					"description": "Visual estimation of Cortical transit timedescribed using ISO 8601 ABNF: P(n)Y(n)M(n)DT(n)H(n)M(n)S",
 					"format": "duration"
 				},
 				"cortical_transit_time_evaluation": {
 					"type": "string",
 					"description": "Cortical transit time, as evaluated by the physician",
-					"enum": ["Normal", "Retarded", "NA"]
+					"enum": ["Non-Delayed", "Delayed", "NA"]
 				},
 				"pyelocaliceal_time": {
 					"type": "string",
@@ -168,13 +173,13 @@
 				},
 				"late_images": {
 					"type": "string",
-					"description": "Tracer progression on late images acquisition",
+					"description": "Tracer stasis on late images acquisition",
 					"enum": ["No give in or increase", "Partly give in", "Complete decrease", "NA"]
 				},
 				"parenchymal_impregnation": {
 					"type": "string",
 					"description": "Parenchymal impregnation of the tracer, as evaluated by the physician",
-					"enum": ["Early and homogeneous", "Early and heterogeneous", "Late and homogeneous", "Late and heterogeneous","NA"]
+					"enum": ["Early and homogeneous", "Early and heterogeneous", "Late and homogeneous", "Late and heterogeneous", "NA"]
 				},
 				"kidney_size": {
 					"type": "string",
@@ -204,25 +209,25 @@
 				"curve": {
 					"type": "string",
 					"description": "Renogram curve, as evaluated by the physician",
-					"enum": ["Spontaneous emptying complete (or almost complete)", "Spontaneous emptying incomplete","No emptying",  "NA"]
+					"enum": ["Spontaneous emptying complete (or almost complete)", "Spontaneous emptying incomplete", "No emptying", "NA"]
 				},
 				"renal_function": {
 					"type": "number",
 					"description": "Renal function, as evaluated by the prevously defined method, in percentage",
-					"enum": ["Spontaneous emptying, complete (or almost complete)", "Spontaneous emptying, incomplete","No emptying",  "NA"],
+
 					"minimum": 0,
 					"maximum": 100
 				},
 				"furosemid_test": {
 					"type": "string",
 					"description": "Furosemid test, as evaluated by the physician",
-					"enum": ["Complete emptying", "Partial emptying","No emptying",  "NA"]
+					"enum": ["Complete response", "Partial response", "No response", "NA"]
 				},
 				"comment": {
 					"type": "sting",
-					"description": "Free text for manually added comment on urinary tract result",
+					"description": "Free text for manually added comment on urinary tract result"
 				}
-			},
+			}
 		},
 		"findings": {
 			"type": "string",
