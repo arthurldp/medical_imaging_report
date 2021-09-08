@@ -10,7 +10,7 @@ Exam:
   institution: CHU Lille
   exam_date_time: 2021-01-01T14:00:00
   exam_type: Scintigraphy
-  device_model: Dual detector gamma camera SYMBIA S Siemens
+  device_model: Caméra SYMBIA T2, NIS 1165
   device_date: 2021-01-01
   exam_indication: Initial evaluation
   activity: 20
@@ -19,6 +19,7 @@ Exam:
   patient_position: Lying
   furosemid_injection: "Yes"
   acquisition_time: PTH1M30
+  static_image: post-void
   renogram_curve: Abnormal
   calculation_method: Patlack
   urinary_tract_duplication: Right
@@ -43,7 +44,7 @@ Exam:
     tmax: [PT11M, PT8M, PT8M]
     curve: [Spontaneous emptying complete (or almost complete), Spontaneous emptying incomplete, Spontaneous emptying incomplete]
     renal_function: [70, 20, 10]
-    furosemid_test: [Complete emptying, Complete emptying, No emptying]
+    furosemid_test: [Complete response, Complete response, No response]
     comment: [NA, NA, NA]
   findings: Abnormal compatible with clinical description
   comment: NA
