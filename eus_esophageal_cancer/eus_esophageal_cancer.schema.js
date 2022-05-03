@@ -84,7 +84,7 @@
 		"Patient_position": {
 			"type": "string",
 			"description": "Position of patient on examination table",
-			"enum": ["NA","supine","left lateral recubent","right lateral recubent"]
+			"enum": ["NA","supine","left lateral recubent"]
 		},
 		"Sedation_protocol": {
 			"type": "string",
@@ -103,7 +103,7 @@
 		"Exam_indication": 
 			"type": "string"
 			"description": " Indication of the EUS"
-			"enum": ["initial staging","lymph node aspiration","recurence","evaluation post treatment","NA"]
+			"enum": ["initial staging","lymph node aspiration","recurence","NA"]
 		},
 		"previous_endoscopy_results": {
 			"type": "string",
@@ -115,7 +115,7 @@
 			"enum": ["No","Yes","NA"],
 			"default": "No"
 		},
-		"Esophageal_stenosis_location": { 
+#		"Esophageal_stenosis_location": { 
 			"type":" string",
 			"description": "Location of esophageal tumoral stenosis",
 			"enum":["cervical","upper thoracic","middle thoracic","lower thoracic","gastro esophageal junction","unknown","NA"]  	
@@ -227,7 +227,7 @@
 					"description": "Measurements of tumor length (cm)",
 					"minimum": 0
 				},
-				"Tumor_width": {
+	#			"Tumor_width": {
 					"type": "string",
 					"description": "Measurements of tumor width (cm)",
 					"minimum": 0
@@ -238,10 +238,10 @@
 					"enum": ["NA","indeterminate","mucosae","epithelium","lamina propria","muscularis mucosae","sub mucosae","muscularis propria","adventice"],
 					"default": "NA"
 				},
-				"Parietal_extension": {
+	-			"Parietal_extension": {
 					"type": "string",
 					"description": "Degree of tumor invasion within the wall layers",
-					"enum": ["NA","indeterminate","epithelium","lamina propria","muscularis mucosae","sub mucosae","muscularis propria","adventice"],
+					"enum": ["NA","indeterminate","mucosa","muscularis propria","adventice"],
 					"default": "NA"
 				},
 				"staging_japanese_classification": {
@@ -253,7 +253,7 @@
 				"staging_T_stage": {
 					"type": "string",
 					"description": "Us T stage of TNM staging classification",
-					"enum": ["NA","usTX","usT0","usTis","usT1a","usT1b","usT2","usT3","usT4a","usT4b","unknown"],
+					"enum": ["NA","usTX","usT0","usTis","usT1","usT2","usT3","usT4","unknown"],
 					"default": "NA"
 				},
 				"Tumor_external_borders": {
