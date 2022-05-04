@@ -1,0 +1,67 @@
+%YAML 1.2
+---
+Exam:
+  schema: medical_imaging_report/eus_esophageal_cancer/ICIPEMIR_esophageal_cancer.schema.json
+  patient_identifier: id21079218088
+  patient_first_name: Pierre
+  patient_last_name: Durand
+  patient_birth: 1968-01-01
+  patient_gender: male
+  institution: CHU Lille
+  operator_physician: Dr A
+  prescribing_physician: Dr B
+  anesthesiologist: Dr C
+  exam_date_time: 2022-03-03T14:14:00
+  device_model: PENTAX Medical J10 Series 
+  probe_type: "radial"
+  patient_position: "left lateral recubent"
+  anesthesia_protocol: "general anesthesia"
+  co2_insufflation: "yes"
+  clinical_history: discovery of an esophageal tumor of the lower third esophagus in context of dysphagia and anorexia
+  exam_indication: "initial staging"
+  tumor_number: 1
+  lymph_node_number: 8
+  nodal_n_stage: "usN3"
+  barett_esophagus: "Yes"
+  barett_esophagus_prague_classification_circumferential_extent_C: "C5" 
+  barett_esophagus_prague_classification_maximal_extent_M: "M7" 
+  pleural_effusion: "absence"
+  intraperitoneal_effusion: "absence"
+  hepatic_metastases_signs: "No"
+  fnb_linear_eus: "Yes"
+  fnb_needle_model: "acquire"
+  fnb_needle_size: "22G"
+  lymph_node_fnb_number: 3
+  comment_on_esophageal: presence of a hiatal hernia
+  tumor_results:
+    tumor_id: tr1
+    tumor_location: "esophagogastric junction"
+    tumoral_upper_point_incisors_distance: 39
+    tumoral_lower_point_incisors_distance: 43
+    tumor_length: 4
+    tumor_morphological_aspect: "flat lesion"
+    circumferential_location: "circumferential"
+    cardinal_orientation: "circumferential"
+    esophageal_tumor_stenosis: "no stenosis"
+    gej_siewert_classification: "siewert type 2"
+    tumor_endoscopic_biopsy: "2 endoscopic biopsies"
+    tumor_endoscopy_comment: NA
+    parietal_tumor_extension: "muscularis propria"
+    staging_t_stage: "usT2"
+    tumor_external_anatomic_contact: "NA"
+    tumor_eus_comment: NA
+  lymph_node_results:
+    lymph_node_id: [ln1, ln2, ln3, ln4, ln5, ln6, ln7, ln8]
+    lymph_node_territory: [20,20,20,20,17,17,17,5]
+    comment_on_lymph_node_location: 4 LN in celiac area, 4 LN in left gastric area and one LN behind left atrium
+    lymph_node_size: [10,10,10,11,10,12,10,11]
+    lymph_node_echogenicity: [hypoechoic, hypoechoic, hypoechoic, hypoechoic, hypoechoic, hypoechoic, hypoechoic, hypoechoic]
+    lymph_node_contours: [regular,regular,regular,regular,regular,regular,regular,regular]
+    lymph_node_shape: [rounded,rounded,rounded,rounded,rounded,rounded,rounded,rounded]
+    node_metastatic_aspect: [m, m, m, m, m, m, m, m]
+    lymph_node_comment: NA
+    node_fnb_evaluation: ["yes","no","no","no","yes","no","no","yes"]
+    fnb_comment: FNB of 3 lymph nodes located in different territories
+  conclusion: adenocarinoma of lower third of esophagus and gastroesophageal junction
+  guidance: NA
+  conclusion_validation: false
