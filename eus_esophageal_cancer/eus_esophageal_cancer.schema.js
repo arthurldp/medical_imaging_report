@@ -1,278 +1,267 @@
 {
-	"$schema": "",
-	"title": "Endoscopic Ultrasound report for esophageal cancer",
+	"$schema": "https://json-schema.org/draft/2019-09/schema#",
+	"title": "endoscopic ultrasound report for esophageal cancer",
 	"type": "object",
 	"required": ["patient_first_name", "patient_last_name", "patient_birth", "conclusion_validation"],
 	"properties": {
-		"Patient_identifier": {
+		"patient_identifier": {
 			"type": "string",
-			"description": "Patient unique identifier",
+			"description": "patient unique identifier",
 			"minLen": 13,
 			"maxLen": 13,
 			"pattern": "^[0-9aAbB]{13}$"
 		},
-		"Patient_first_name": {
+		"patient_first_name": {
 			"type": "string",
-			"description": "Patient's first name"
+			"description": "patient's first name"
 		},
-		"Patient_last_name": {
+		"patient_last_name": {
 			"type": "string",
-			"description": "Patient's last name"
+			"description": "patient's last name"
 		},
 		"patient_birth": {
 			"type": "string",
-			"description": "Date of birth, format yyyy-mm-dd",
+			"description": "date of birth, format yyyy-mm-dd",
 			"format": "date"
 		},
-		"Patient_gender": {
+		"patient_gender": {
 			"type": "string",
-			"description": "Patient's gender",
+			"description": "patient's gender",
 			"enum": ["male", "female", "NA"]
 		},
-		"Prion_disease_status": {
+		"institution": {
 			"type": "string",
-			"description": "Risk of transmissible spongiform encephalopathy",
-			"enum": ["NA","No","suspected or affected"]
+			"description": "institution where endoscopic ultrasound is performed",
+			"default": "chu of lille"
 		},
-		"Institution": {
+		"operator_physician": {
 			"type": "string",
-			"description": "Institution where endoscopic ultrasound is performed"
+			"description": "name of physician who peformed endoscopic ultrasound exam"
 		},
-		"Physician": {
+		"prescribing_physician": {
 			"type": "string",
-			"description": "Physician who peformed endoscopic ultrasound exam"
+			"description": "name of physician who prescribed endoscopic ultrasound exam"
 		},
-		"Prescribing_physician": {
+		"anesthesiologist": {
 			"type": "string",
-			"description": "Physician who prescribed endoscopic ultrasound exam"
-		},
-		"Anesthesiologist": {
-			"type": "string",
-			"description": "Anesthesiologist name"
+			"description": "Name of Anesthesiologist"
         },
-		"Exam_date_time": {
+		"exam_date_time": {
 			"type": "string",
-			"description": "Date and time of exam, format yyyy-mm-ddThh:mm:ss",
+			"description": "date and time of exam, format yyyy-mm-ddThh:mm:ss",
 			"format": "date-time"
 		},
-		"Device_model": {
+		"device_model": {
 			"type": "string",
-			"description": "Model of imaging device"
+			"description": "model of imaging device"
 		},
-		"Device_date": {
+		"probe_type" {
 			"type": "string",
-			"description": "Date of device validation, format yyyy-mm-dd",
-			"format": "date"
-		},
-		"Probe_type" {
-			"type": "string",
-			"description": "Type of EUS probe used",
+			"description": "type of EUS probe used",
 			"enum": ["radial","linear","miniprobe","NA"],
-			"default": "NA"
-		}, 
-		"US_frequency" {
-			"type": "number",
-			"description": "Frequency of EUS probe in Mega Hertz",
-			"minimum": 7.5 
-		}, 	
-		"Viewable_layers_number": {
-			"type": "string",
-			"description": "Number of viewable parietal esophageal layers",
-			"enum" : ["5", "7", "9","NA"]
-			"default": "NA"
+			"default": "radial"
 		},
-		"Patient_position": {
+		"patient_position": {
 			"type": "string",
-			"description": "Position of patient on examination table",
-			"enum": ["NA","supine","left lateral recubent"]
+			"description": "position of patient on examination table",
+			"enum": ["NA", "supine", "left lateral recubent", "unknown"],
+			"default":"left lateral recubent"
 		},
-		"Sedation_protocol": {
+		"anesthesia_protocol": {
 			"type": "string",
-			"description": "Protocol of anesthesiology before endoscopy"
+			"description": "type of anesthesiology during endoscopy and EUS",
+			"enum": ["NA","IV sedation","general anesthesia","general anesthesia with tracheal intubation "],
+			"default":"general anesthesia"
 		},
-		"CO2_insufflation": {
+		"co2_insufflation": {
 			"type": "string",
-			"description": "CO2 insufflation during endoscopy",
+			"description": "co2 insufflation during endoscopy",
 			"enum": ["Yes","No","NA"],
-			"default": "NA"
+			"default": "Yes"
 		},
-		"Clinical_history": {
+		"clinical_history": {
 			"type": "string",
-			"description": "Short description of clinical history"
+			"description": "short description of clinical history"
 		},
-		"Exam_indication": 
-			"type": "string"
-			"description": " Indication of the EUS"
-			"enum": ["initial staging","lymph node aspiration","recurence","NA"]
-		},
-		"previous_endoscopy_results": {
+		"exam_indication":  {
 			"type": "string",
-			"description": "Main results of previous endoscopy"
+			"description": " indication of the EUS",
+			"enum": ["initial staging","lymph node FNB","tumor recurrence","evaluation post treatment","NA"],
+			"defualt": "initial staging"
 		},
-		"esophageal_tumoral_stenosis": {
-			"type": "string",
-			"description": "Presence of esophageal tumoral stenosis",
-			"enum": ["No","Yes","NA"],
-			"default": "No"
-		},
-#		"Esophageal_stenosis_location": { 
-			"type":" string",
-			"description": "Location of esophageal tumoral stenosis",
-			"enum":["cervical","upper thoracic","middle thoracic","lower thoracic","gastro esophageal junction","unknown","NA"]  	
-		},
-		"Exam_conditions": {
-			"type": "string",
-			"description": "Conditions of the EUS process",
-			"enum":["Optimal", "Suboptimal", "NA"]
-		},
-		"Aspecific_parietal_thickening": {     
-			"type": "string",
-			"description": "Location and layer of parietal aspecific thickening"
-		},
-		"Tumor_presence": {
+		"tumor_number": {
 			"type": "number",
-			"description": "Number of esophageal tumor detected on the eus",
+			"description": "number of esophageal tumor detected on the eus",
 			"minimum": 0
 		},
-		"Lymph_node_presence": {
+		"lymph_node_number": {
 			"type": "number",
-			"description": "Number of lymph node detected on the eus",
+			"description": "number of lymph node detected on the eus",
 			"minimum": 0
+		},
+		"nodal_n_stage": {
+			"type": "string",
+			"description": "n stage of TNM staging classification",
+			"enum": ["NA", "NX", "usN0", "usN1", "usN2", "usN3"],
+			"default": "usN0"
 		},	
-		"Barett_esophagus": {
+		"barett_esophagus": {
 			"type": "string",
-			"description": "Sign(s) of barett esophagus detected on the eus",
+			"description": "sign of metaplasia of gastroesophageal junction detected on endoscopy",
+			"enum": ["No", "Yes", "Suspicious","NA"],
+			"default": ["No"]
+		},
+		"barett_esophagus_prague_classification_circumferential_extent_C": {
+			"type": "string",
+			"description": "circumferential metaplasia extent from GEJ in centimeter",
+			"enum": ["NA", "0", "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10"],
+			"default": ["NA"]
+		},
+		"barett_esophagus_prague_classification_maximal_extent_M": {
+			"type": "string",
+			"description": " maximal metaplasia extent from GEJ in centimeter",
+			"enum": ["NA", "M0", "M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M10"],
+			"default": ["NA"]
+		},
+		"pleural_effusion": {
+			"type": "string",
+			"description": "pleural effusion detected on the eus",
+			"enum": ["absence", "presence", "unknown", "NA"],
+			"default": ["absence"]
+		},
+		"intraperitoneal_effusion": {
+			"type": "string",
+			"description": "intra peritoneal effusion detected on the eus",
+			"enum": ["absence", "presence", "unknown", "NA"],
+			"default": ["absence"]
+		},
+		"hepatic_metastases_signs": {
+			"type": "string",
+			"description": "hepatic metastasis signs detected on the eus",
+			"enum": ["No","1", "2", "3", "> 3", "NA"],
+			"default": ["No"]
+		},
+		"fnb_linear_eus": { 
+			"type": "string",
+			"description": "process of linear eus for lymph node FNB", 
 			"enum": ["No", "Yes", "NA"],
-			"default": ["No"]
-		},
-		"Pleural_effusion": {
-			"type": "string",
-			"description": "Pleural effusion detected on the eus",
-			"enum": ["Absence", "Presence","Unknown","NA"],
-			"default": ["No"]
-		},
-		"Intra_peritoneal_effusion": {
-			"type": "string",
-			"description": "Intra peritoneal effusion detected on the eus",
-			"enum": ["Absence", "Presence","Unknown" "NA"],
-			"default": ["No"]
-		},
-		"Metastasis_indirect_signs": {
-			"type": "string",
-			"description": "Possible metastasis signs detected on the eus",
-			"enum": ["No", "abdominal effusion", "pleural effusion","hepatic metastasis aspect","NA"],
-			"default": ["No"]
-		},
-		"FNA_radial_EUS": { 
-			"type": "string",
-			"description": "Process of radial eus for lymph node FNA", 
-			"enum": ["No","Yes","NA"],
 			"default" : ["No"]
 		},
-		"FNA_Needle_model": {
+		"fnb_needle_model": {
 			"type": "string",
-			"description": "Model of FNA needle "
+			"description": "model of FNB needle ",
+			"default":"acquire"
 		},
-		"FNA_Needle_size": {
-			"type": "number",
-			"description": "Size of FNA needle in Gauge" 
+		"fnb_needle_size": {
+			"type": "enum",
+			"description": "size of FNB needle in Gauge (G)",
+			"enum": ["NA", "19G", "22G", "25G"],
+			"default": "22G" 
 		},
-		"Lymph_node_FNA_number": {
+		"lymph_node_fnb_number": {
 			"type": "number",
-			"description": "Number of lymph node punctioned",
+			"description": "number of lymph node punctioned by FNB",
 			"minimum" : 0
 		},
-		"Comment_on_esophageal"
+		"comment_on_esophageal"
 			"type": "string",
-			"description": "Free text to add information for esophageal EUS description"
+			"description": "free text to add other information for esophageal description"
 		},	
-		"Tumor_results": {
+		"tumor_results": {
 			"type": "object",
-			"description": "Description of the tumor(s) results",
+			"description": "description of the tumor(s) results",
 			"properties": {
-				"Tumor_id" {
+				"tumor_id" {
 					"type": "string",
-					"description": "Generated hash id for each successively described tumor"
+					"description": "generated hash id for each successively described tumor"
 				},
-				"Tumor_location": {
+				"tumor_location": {
 					"type": "string",
-					"description": "Location of the tumor in esophagus",
-					"enum": ["cervical esophagus", "upper thoracic esophagus", "middle thoracic esophagus", "lower thoracic esophagus", "esophagogastric junction"]
+					"description": "location of the tumor in esophagus",
+					"enum": ["NA","cervical esophagus", "upper thoracic esophagus", "middle thoracic esophagus", "lower thoracic esophagus", "esophagogastric junction"]
 				},
-				"Tumoral_upper_point_incisors_distance": {
+				"tumor_upper_point_incisors_distance": {
 					"type": "number",
-					"description": "Distance of upper point of tumor from the incisors in centimeter",
-					"minimum": "15"
-					"maximum": "42"
+					"description": "distance of upper point of tumor from the incisors in centimeter",
+					"minimum": "15",
+					"maximum": "45"
 				},
-				"Tumoral_lower_point_incisors_distance": {
+				"tumor_lower_point_incisors_distance": {
 					"type": "number",
-					"description": "Distance of lower point of the tumor from the incisors in centimeter",
-					"minimum": "15"
-					"maximum": "42"
+					"description": "distance of lower point of the tumor from the incisors in centimeter",
+					"minimum": "15",
+					"maximum": "45"
 				},
-				"Circumferential_location": {
+				"tumor_length": {
 					"type": "string",
-					"description": "Direction of tumor in esophageal wall on a transversal section of esophagus",
-					"enum": ["NA","Unknown", "circumferential", "right quadrant", "left quadrant", " anterior quadrant", "posterior quadrant"],
-					"default": "NA"
-				},
-				"Tumor_depth": {
-					"type": "number",
-					"description": "Measurements of tumor depth (cm)",
+					"description": "measurements of tumor length in centimeter",
 					"minimum": 0
 				},
-				"Tumor_length": {
+				"tumor_morphological_aspect": {
 					"type": "string",
-					"description": "Measurements of tumor length (cm)",
-					"minimum": 0
+					"descripion": "morphological aspect of tumor in endoscopy",
+					"enum": ["NA", "flat lesion", "ulcerative lesion", "granular lesion", "nodular", "protruded", "not describable"],
+					"default": "NA"	
 				},
-	#			"Tumor_width": {
+				"circumferential_location": {
 					"type": "string",
-					"description": "Measurements of tumor width (cm)",
-					"minimum": 0
-				},
-				"Tumor_initial_layer": {
-					"type": "string",
-					"description": "Parietal layer where the tumor initially developped",
-					"enum": ["NA","indeterminate","mucosae","epithelium","lamina propria","muscularis mucosae","sub mucosae","muscularis propria","adventice"],
+					"description": "circumference of tumor in esophageal wall on a transversal section of esophagus",
+					"enum": ["NA","Unknown", "1/4 of circumference", "1/2 of circumference", "2/3 of circumference", "circumferential"],
 					"default": "NA"
 				},
-	-			"Parietal_extension": {
+				"cardinal_orientation": {
 					"type": "string",
-					"description": "Degree of tumor invasion within the wall layers",
-					"enum": ["NA","indeterminate","mucosa","muscularis propria","adventice"],
+					"description": "quadrant of tumor in esophageal wall on a transversal section of esophagus",
+					"enum": ["NA", "right quadrant", "left quadrant", " anterior quadrant", "posterior quadrant","curcumferential"],
 					"default": "NA"
 				},
-				"staging_japanese_classification": {
+				"esophageal_tumor_stenosis": {
 					"type": "string",
-					"description": "Japanese classification for superficial esophageal cancer",
-					"enum": ["NA","m1","m2","m3","sm1","sm2","sm3","unknown"]
-					"default": "NA",
+					"description": "Presence of esophageal tumoral stenosis",
+					"enum": ["No stenosis","incomplete stenosis","tumoral stenosis not crossable"],
+					"default": "No"
 				},
-				"staging_T_stage": {
+				"gej_siewert_classification": {
 					"type": "string",
-					"description": "Us T stage of TNM staging classification",
-					"enum": ["NA","usTX","usT0","usTis","usT1","usT2","usT3","usT4","unknown"],
+					"description": "description of siewert classification in case of adenocarcinoma of gastroesophageal junction, type 1 if between -5 and -1cm from cardia, type 2 if between -1 cm and +2cm from cardia, type 3 if between +2 to +5 cm from cardia",
+					"enum": ["NA","siewert type 1","siewert type 2","siewert type 3", "unknown"],
 					"default": "NA"
 				},
-				"Tumor_external_borders": {
+				"tumoral_endoscopic_biopsy": {
 					"type": "string",
-					"description": "Aspect of tumor external borders",
-					"enum": ["NA", "regular", "irregular"],
+					"description": "biopsy of tumor during endoscopy",
+					"enum": ["NA", "no endoscopic biopsy ", "1 endoscopic biopsy", "2 endoscopic biopsies","3 endoscopic biopsies", "several endoscopic biopsies"],
+					"default": "no biopsy"
+				},
+				"tumor_endoscopy_comment": {
+					"type": "value",
+					"description": "Free text for additional information about the endoscopy tumor results "
+				},
+				"parietal_tumor_extension": {
+					"type": "string",
+					"description": "Degree of tumor invasion within the wall layers, mucosae and submucosae are not differentiated",
+					"enum": ["NA", "indeterminate", "mucosae and or sub mucosae", "muscularis propria", "adventice", "adjacent structures"],
 					"default": "NA"
 				},
-				"Tumor_external_anatomic_contact": {
+				"tumor_t_stage": {
+					"type": "string",
+					"description": "Us T stage of TNM staging classification, T1b and T1a are grouped into T1 and T4a and T4b are grouped into T2 ",
+					"enum": ["NA", "usTX", "usT0", "usTis", "usT1", "usT2", "usT3", "usT4", "unknown"],
+					"default": "NA"
+				},
+				"tumor_external_anatomic_contact": {
 					"type": "string",
 					"description": "Aspect of external anatomic contact, description of invasion of mediastinal structures ",
+					"enum": ["NA", "Unknown", "No external anatomic contact", "aorta", "vessels", "pleura", "tracheobronchial tube", "diaphragm", "pericardium"],
+					"default": "NA"
 				},	
-				"Tumor_comment": {
+				"tumor_eus_comment": {
 					"type": "value",
-					"description": "Free text for additional information about the tumor "
+					"description": "Free text for additional information about the eus tumor results "
 				}
-			},
-		},
-		"Lymph_node_results": {
+			}
+		}
+		"lymph_node_results": {
 			"type": "object",
 			"description": "Description of the Lymph node(s) results",
 			"properties": {
@@ -280,78 +269,73 @@
 					"type": "string",
 					"description": "Generated hash id for each successively described lymph node"
 				},
-				"Lymph_node_territory": {
+				"lymph_node_territory": {
 					"type": "string",
-					"description": "Lymph node territory location",
-					"enum": ["NA","peritumoral","2R","2L","4R","4L","5L","7","8U","8M","8Lo","9R","9L","17","18","19","20"],
+					"description": "Lymph node territory name and classification",
+					"enum": ["NA", "Right upper paratracheal nodes (2R)", " Left upper paratracheal nodes (2L)", "Right lower paratracheal nodes (4R)", "Left lower paratracheal nodes (4L)", "subaortic nodes (5L)", "Subcarinal nodes (7)", " Upper thoracic paraesophageal lymph nodes (8U)", "middle thoracic paraesophageal lymph nodes (8M)", "Lower thoracic paraesophageal lymph nodes (8Lo)", "Right Pulmonary ligament nodes (9R)", " Left Pulmonary ligament nodes (9L)", " Left gastric nodes (17)", "Common hepatic nodes (18)", "Splenic nodes (19)", "Celiac nodes (20)"],
 					"default": "NA"
 				},
-				"Comment_on_location": {
+				"comment_on_lymph_node_location": {
 					"type": "string",
-					"description": "Free text to add comment on lymph node location, like peritumoral location or other information",
+					"description": "Free text to add comment on lymph node location, like peritumoral location or other information"
 				},
-				"Lymph_node_incisors_distance": {
+				"lymph_node_size": {
 					"type": "number",
-					"description": "Distance of lymph node from the incisors",
-					"minimum": 15
-				},
-				"Node_metastatic_characteristics": {
-					"type": "number",
-					"description": "Number of metastatic charecteristics such as short axis size superior or égal to 10mm , rounded shape, regular contours and hypoechoic content",
-					"minimum": 0,
-					"maximum": 4
-				},
-				"Lymph_node_size": {
-					"type": "number",
-					"description": "Short axis diameter of the lymph node in millimeter"
+					"description": "Short axis diameter of the lymph node in millimeter",
 					"exclusiveMinimum": 0,
 					"maximum": 200
 				},
-				"Lymph_node_echogenicity": {
+				"lymph_node_echogenicity": {
 					"type": "string",
 					"description": "Echongenicity of the lymph node",
 					"enum": ["NA","hyperechoic","hypoechoic","anechoic"],
 					"default": "NA"
 				},
-				"Lymph_node_contours": {
+				"lymph_node_contours": {
 					"type": "string",
 					"description": "Aspect of lymph node contours",
 					"enum": ["NA", "regular", "irregular"],
 					"default": "NA"
 				},
-				"Lymph_node_shape": {
+				"lymph_node_shape": {
 					"type": "string",
 					"description": "Aspect of lymph node shape",
-					"enum": ["NA", "rounded", "lobulated","oval","spiculated"],
+					"enum": ["NA", "rounded", "lobulated", "oval", "spiculated"],
 					"default": "NA"
 				},
-				"Lymph_node_comment": {
+				"node_metastatic_aspect": {
 					"type": "string",
-					"description": "free text to complete manuelly the lymph node description, like homogeneous or inhomogeneous content" 
-				},	
-				"Node_FNA_evaluation": {
-					"type": "string",
-					"description": "evaluation of lymph node by FNA",
-					"enum": ["NA", "yes", "No"]  
+					"description": "lymph node metastatic charecteristics such as short axis size superior or égal to 10mm , rounded shape or regular contours and hypoechoic content. m = mestastatic, i = inflammatory, u = undefined ",
+					"enum": ["NA", "m", "i", "u"],
+					"default":  "NA"
 				},
-				"FNA_comment": {
+				"lymph_node_comment": {
+					"type": "string",
+					"description": "free text to manually complete the description of the lymph node, such as homogeneous or inhomogeneous character and the presence of other identical lymph node(s) in the same territory." 
+				},	
+				"node_fnb_evaluation": {
+					"type": "string",
+					"description": "evaluation of lymph node by FNB"
+					"enum": ["NA", "Yes", "No"]
+					"default": "No"  
+				},
+				"fnb_comment": {
 					"type": "string",
 					"description": "free text to complete manuelly the lymph node FNA information and possible difficulties" 
 				}
-			},
-		},
+			}
+		}
 		"Conclusion": {
 			"type": "string",
 			"description": "Free text to describe main abnormalities"
 		},
 		"Guidance": {
 			"type": "string",
-			"description": "free text to manuelly describe guidance of the exam"
+			"description": "free text to manuelly describe physician guidance of the exam"
 		},
 		"Conclusion_validation": {
 			"type": "boolean",
 			"description": "The physician must validate the automatically generated conclusion, after manual modification if required",
 			"default": false
 		}
-	
-}
+}	
