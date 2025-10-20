@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema#",
-    "title": "Transoesophageal Echocardiography Report",
+    "title": "Endoscopic ultrasound, transoesophageal echocardiography report for endocarditis",
     "type": "object",
     "required": ["patient_first_name", "patient_first_name", "patient_birth", "conclusion_validation"],
     "properties": {
