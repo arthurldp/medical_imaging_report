@@ -1,13 +1,13 @@
 # ICIPEMIR: Improving the completeness, interoperability and patient explanations of medical imaging reports.
 
-Supplementary files related to the academic paper presenting the academic part of the ICIPEMIR project.
+Supplementary files related to the academic paper of our project for improving medical imaging report.
 
 1. UML diagram: "Overview"
 2. JSON Schema: "Instructions of use"
 3. YAML Instance: "Dataset for one ocurence"
 4. QR-Code embedding a YAML instance
 5. JS file to create the web-based form using Goupile (https://goupile.fr/demo/app/introduction/)
-6. Screenshot of the web-based form produced by Goupile
+
 
 
 ## UML
@@ -115,5 +115,14 @@ Default syntax for defining each variable is presented through some example:
 
 Multitable data is handled by YAML using the "flow style" as described on [YAML website] (https://yaml.org/spec/1.2/spec.html#id2759963)
 
-
-
+%YAML 1.2
+```YAML
+---
+example_dataset:
+  patient_name: Doe
+  patient_birth: 1901-01-01
+  fever: false
+  lithiasis:
+    lateralisation: [Left, Right, Left]
+    size: [7, 5, 6]
+```
